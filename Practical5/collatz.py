@@ -6,4 +6,4 @@ for i in range(1,12):# make sure to get 13 values
     c = a + b # get the value, prepare for the next round
     a = b
     b = c
-    print(c) # show the target value we get 
+    print(c) # show the target value we get
