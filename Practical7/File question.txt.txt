@@ -1,0 +1,6 @@
+question:Plot a boxplot of total case numbers in different countries on 14 March 2020
+
+line number=12 lines
+
+Result: the boxplot is horrible since the difference between countries is significant. The total cases of America, is too many that it has extended the scale of y-axis, thus squeezing box into a line. 
+            
