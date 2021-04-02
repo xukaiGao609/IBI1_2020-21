@@ -36,7 +36,7 @@ for line in dna:
         if Boole==True:
                 c=c+line.strip()
                 series = ''
-                for i in range(0,len(c)-2,3):
+                for i in range(0,len(c)-2,3): #here to mind the stop condon as well as translate into protein
                     sery=c[i]+c[i+1]+c[i+2]
                     if code[sery]=='stop':
                         break
