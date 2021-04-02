@@ -6,7 +6,7 @@ s=''
 for line in dna:
     if line.startswith('>'):
         if Boole==True:
-            s = s+'>'+b+'   '+str(len(c))+'\n'+c+'\n'
+            s = s+'>'+b+'   '+str(len(c))+'\n'+c+'\n' #create the final format
             c=''
             Boole=False
         if re.findall(r'unknown',line):
@@ -16,7 +16,7 @@ for line in dna:
             Boole=True
     else:
         if Boole==True:
-                c=c+line.strip()
+                c=c+line.strip()  #put in the dna sequence
 dna.close()
 z=open('unknown_function.fa','w')
 z.write(s)
