@@ -3,7 +3,10 @@ b = 190784
 c = 100321
 d = abs(a - c)# regardless of which number is bigger,we can always get a positive number.
 e = abs(b - a)
-print(bool(d > e))
+if d > e:
+    print('d is bigger than e')
+else:
+    print('d is smaller than e')
 
 X = False
 Y = True
