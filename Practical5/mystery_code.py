@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: Selects a random number between 1 and 100 until a number less than 50 is selected, which is then printed
+# Answer: Selects a random number between 1 and 100 until a number no bigger than 50 is selected, which is then printed
 
 # Import libraries
 # randint allows drawing a random number,
