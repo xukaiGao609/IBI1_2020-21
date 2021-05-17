@@ -1,5 +1,5 @@
 For practical of week 4
-I have changed the commit messages to the more informative ones, I add "edited" before the "thingsIlike.txt", add "update" before the "reflection.txt"......
+I have changed the commit messages to the more informative ones by commiting files again, I add "edited" before the "thingsIlike.txt", add "update" before the "reflection.txt"......
 
 For Practical of week 5
 first I managed to print the result such as "d is bigger than e"
