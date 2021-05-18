@@ -36,7 +36,7 @@ class Vertex:
     def getConnection(self):
         return self.connected.keys()
 
-    def Id(self):
+    def getId(self):
         return self.id
 
     def getWeight(self, nbr):
