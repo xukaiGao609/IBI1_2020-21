@@ -3,14 +3,12 @@ import xml.dom.minidom
 import matplotlib.pyplot as plt
 import numpy as np
 
-# parsing xml file
 def parse_xml(path):
     DOMTree = xml.dom.minidom.parse(path)
     collection = DOMTree.documentElement
     terms = collection.getElementsByTagName("term")
     return terms
 
-#  getting the parent nodes (molecule_name in <defstr> of the parent nodes)
 def get_primary_matches(terms, molecule_name):
     match_list = []
     for term in terms:
@@ -20,7 +18,6 @@ def get_primary_matches(terms, molecule_name):
             match_list.append(term)
     return match_list
 
-# 2 assistant classes: Vertex & Graph to structurize terms
 class Vertex:
     def __init__(self, key):
         self.id = key
@@ -75,7 +72,6 @@ class Graph:
     def __iter__(self):
         return iter(self.vertList.values())
 
-# assistant function to build tree of terms
 def buildTree(terms):
     tree = Graph()
     for term in terms:
@@ -85,7 +81,6 @@ def buildTree(terms):
             tree.addEdge(id, child)
     return tree
 
-# assistant recursive function to find all childNodes as vertices
 def getAllChildren(tree, vertices):
     allChildren = []
     for vertex in vertices:
@@ -98,23 +93,18 @@ def getAllChildren(tree, vertices):
                 allChildren += getAllChildren(tree, children)
     return allChildren
 
-# main function outputting the final result
 def count_childNodes_macromolecules_xml(tree, molecule_name):
     match_list = get_primary_matches(terms, molecule_name)
     vertices_list = [tree.getVertex(term.getElementsByTagName("id")[0].childNodes[0].data) for term in match_list]
     count = len(list(set(getAllChildren(tree, vertices_list)))) - len(match_list)
     return count
 
-# define file path (absolute path)
 path = "C:/Users/11877/github/IBI1_2020-21/Practical14/go_obo.xml"
 
-# Parse the xml file
 terms = parse_xml(path)
 
-# build tree
 tree = buildTree(terms)
 
-# Calculate & print the data
 dna = count_childNodes_macromolecules_xml(tree, "DNA")  # 7271
 rna = count_childNodes_macromolecules_xml(tree, "RNA")  # 8927
 protein = count_childNodes_macromolecules_xml(tree, "protein")  # 27771
